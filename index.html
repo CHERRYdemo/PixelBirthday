@@ -9,6 +9,12 @@
   <link rel="stylesheet" href="./assets/css/index.css"/>
 </head>
 <body>
+  <script>
+    // Fix for file:// protocol: redirect to root hash if no hash is present
+    if (!window.location.hash || window.location.hash === '' || window.location.hash === '#') {
+      window.location.hash = '#/';
+    }
+  </script>
   <div id="root"></div>
   <script src="./assets/js/sandbox-script-manager.js"></script>
   <script type="module" crossorigin src="./assets/js/index.js"></script>
